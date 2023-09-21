@@ -6,7 +6,8 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { ThemedTitleV2 } from "@refinedev/mui";
 
-import {yariga} from '../assets';
+import {openin_app_logo} from '../assets';
+import "../index.css";
 
 import { CredentialResponse } from "../interfaces/google";
 
@@ -15,6 +16,9 @@ import { CredentialResponse } from "../interfaces/google";
 const GOOGLE_CLIENT_ID = "221699032090-3scjv0rajuat02u5euqbld47l77ikqc0.apps.googleusercontent.com";
 
 export const Login: React.FC = () => {
+    const signinBtnClick = (event: React.MouseEvent<HTMLElement>) => {
+        alert("Please try to signin with google.");
+    };
     const { mutate: login } = useLogin<CredentialResponse>();
 
     const GoogleButton = (): JSX.Element => {
@@ -81,11 +85,31 @@ export const Login: React.FC = () => {
                     }}
                     /> */}
                     <div>
-                        <img src={yariga} alt="Openin App" />
+                        <img src={openin_app_logo} alt="Openin App" />
+                        <Typography align="left" color="#000000" fontSize="24px">Sign In</Typography>
+                        <Typography align="left" color="#000000" fontSize="12px">Sign in to your account</Typography>
                     </div>
 
-                    <GoogleButton />
+                    <div>
+                        <label htmlFor="email" style={{ color: "#000000", fontSize:"12px" }}>Email address</label>
+                        <br />
+                        <input type="email" id="email" className="input_field"/>
+                        <br/>
+                        <label htmlFor="password" style={{ color: "#000000", fontSize:"12px"}}>Password</label>
+                        <br />
+                        <input type="password" id="password" className="input_field"/>
+                        <Typography fontSize="12px"><a href="#" style={{ color: "#4285F4" }}>Forgot password?</a></Typography>
+                        <br />
+                        <button className="signin_btn" onClick={signinBtnClick} type="submit">Sign In</button>
+                        <br />
+                        <div className="googleBtn">
+                            <GoogleButton />
+                        </div>
+                    </div>
 
+                    <div>
+                        <Typography fontSize="12px" color="#858585">Don't have an account? <span><a href="#" style={{ color: "#4285F4" }}>Register here</a></span></Typography>
+                    </div>
 
                     {/* <Typography align="center" color={"text.secondary"} fontSize="12px">
                     Powered by

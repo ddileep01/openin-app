@@ -37,3 +37,30 @@
         height: auto;
     }
   }
+
+  .googleBtn{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .signin_btn{
+    background-color: #4285F4;
+    color: #ffffff;
+    border-width: 0px;
+    border-radius: 4px;
+    width: 86%;
+    height: 32px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+
+  .input_field{
+    background-color: #EAEAEA;
+    color: #000000;
+    border-radius: 6px;
+    width: 100%;
+    border-width: 0px;
+    height: 30px;
+    padding: 8px;
+  }
