@@ -1,6 +1,6 @@
 import { 
     Refine,
-    GitHubBanner, 
+    // GitHubBanner, 
     WelcomePage,
     Authenticated
 ,AuthBindings, 
@@ -125,7 +125,7 @@ localStorage.setItem("token", `${ credential }`);
     
     return (
         <BrowserRouter>
-        <GitHubBanner />
+        {/* <GitHubBanner /> */}
         <RefineKbarProvider>
             <ColorModeContextProvider>
 <CssBaseline />
