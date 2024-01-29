@@ -25,6 +25,7 @@ import { Header } from "./components/header";
 import { Login } from "pages/login";
 import { CredentialResponse } from "interfaces/google";
 import { parseJwt } from "utils/parse-jwt";
+import Dashboard from 'pages/dashboard';
 
 const axiosInstance = axios.create();
 axiosInstance.interceptors.request.use((request: AxiosRequestConfig) => {
@@ -208,6 +209,7 @@ authProvider={authProvider}
 
 
                 <RefineKbar />
+                <Dashboard />
                 <UnsavedChangesNotifier />
                 <DocumentTitleHandler />
             </Refine>
